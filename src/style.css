@@ -40,7 +40,7 @@ button {
   background-color: var(--heading-color);
   color: var(--primary-color);
   font-weight: bold;
-  font-size: 1em;
+  font-size: 0.85em;
   cursor: pointer;
   border-radius: 999px;
 }
@@ -63,9 +63,9 @@ h1, h2, h3, h4 {
   margin-bottom: 2em;
 }
 
-h1 { font-size: 3.5em; margin: 1em 0; }
-h2 { font-size: 2.5em; }
-h3 { font-size: 2em; }
+h1 { font-size: 3em; margin: 1em 0; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.8em; }
 h4 { font-size: 1.3em; color: var(--accent-color); }
 
 p { margin-bottom: 1em; }
@@ -89,41 +89,33 @@ li {
    HEADER / NAVBAR
 ===================== */
 header {
-  height: 100vh;
+  height: 5vh;
 }
 
 .navbar {
   position: fixed;
-  inset: 0;
-  z-index: 1000;
-
+  top: 0;
+  left: 0;
+  width: 100%; /* Zajistí, že barva pozadí bude přes celou šířku */
+  z-index: 1000; /* Aby byla lišta vždy nad ostatním obsahem */
+  
   display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background-color: transparent;
-  transition:
-    height 0.4s ease,
-    background-color 0.4s ease;
-}
-
-.navbar.scrolled {
-  height: 5em;
-  background-color: var(--primary-color);
   justify-content: space-between;
-  padding: 0 1.5em;
+  align-items: center; /* Opraveno z 'left' na 'center' pro lepší zarovnání */
+  padding: 0.5em 1.5em;
+  background-color: var(--primary-color);
+  
+  box-sizing: border-box; /* Důležité: aby padding nezvětšil šířku nad 100% */
 }
+
+
 
 /* LOGO */
 .header-image {
-  max-height: 60vh;
-  width: auto;
+  max-height: 3.5em;
+  width: 100%;
   object-fit: contain;
   transition: max-height 0.4s ease;
-}
-
-.navbar.scrolled .header-image {
-  max-height: 3.5em;
 }
 
 /* =====================
@@ -229,6 +221,10 @@ header {
     font-size: 1.8em;
 }
 
+.services-item-text {
+  margin-bottom: 1.8em;
+}
+
 /* =====================
    GALERIE v SERVICES
 ===================== */
@@ -240,7 +236,7 @@ header {
   border-radius: 12px;
   border: 3px solid var(--accent-color);
   cursor: pointer;
-  margin-top: 1em;
+ 
 }
 
 /* skryté obrázky */
