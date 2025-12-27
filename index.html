@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stavební práce | Dominik Hotkovič</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script type="module" src="/src/main.ts"></script>
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="icon" href="/favicon.png" sizes="32x32" type="image/png">
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        
+        <nav class="navbar">
+           <a href="/"> <img src="/src/img/logo_png.png" alt="Logo Stavební práce Dominik Hotkovič" class="header-image"></a>
+            <div class="hamburger" id="hamburger-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#sluzby">Služby</a></li>
+                <li class="nav-item"><a href="#kdojsem">O mně</a></li>
+                <li class="nav-item"><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+      </div>
+        
+    </header>
+            <div class="page-content-wrapper">
+                <div class="intro">
+                    <h1 class="intro-text">STAVEBNICTVÍ</h1>
+                    <p class="intro-text highlight">Široká škála služeb od zednických prací až po obklady</p>
+                    <p class="intro-text">vysoká kvalita práce · moderní design · spokojenost zákazníků · rozumná cena</p>
+                    <p class="intro-text">Moravský Beroun · Olomoucký kraj · Moravskoslezský kraj · celá ČR</p>
+                </div>
+                <div class="intro-buttons">
+                    <button onclick="location.href='#kontakt'" class="button button-highlight">Nezávazná poptávka →</button>
+                    <button onclick="location.href='#sluzby'" class="button" >Služby →</button>
+                </div>
+            </div>
+            <img src="/src/img/intro_image.jpg" alt="Ilustrativní obrázek - nákres stavby" class="intro-image">
+            <div class="page-content-wrapper">
+                <div class="services" id="sluzby">
+                    <h3>S čím vám mohu pomoci?</h3>
+                    <div class="services-items-container">
+                            <div class="services-item">
+                                <h4 class="services-item-title">Zednické práce</h4>
+                                    <ul class="services-item-text">
+                                      <li>Zdění zdí a příček</li>
+                                      <li>Vnější, vnitřní omítky a štukování</li>
+                                      <li>Přestavby/rekonstrukce bytových jader</li>
+                                      <li>Rekonstrukce bytů, domů a komerčních prostorů</li>
+                                      <li>Výstavba rodinných domů</li>
+                                      <li>Pokládka venkovní dlažby</li>
+                                      <li>Bourací práce</li>
+                                      <li>a další...</li>
+                                    </ul>
+                            </div>
+                            <div class="services-item">
+                                <h4 class="services-item-title">Obklady a dlažby</h4>
+                                
+                                    <ul class="services-item-text">
+                                      <li>Obklady a dlažby v interiéru (koupelny, toalety, kuchyně a další)</li>
+                                      <li>Obklady a dlažby v exteriéru (zdi, balkony, terasy, bazény a další)</li>
+                                      <li>Montáž kamenného obkladu</li>
+                                      <li>Montáž cihlového obkladu</li>
+                                      <li>Pokládka dlažby na terče</li>
+                                      <li>a další...</li>
+                                    </ul>
+                                <div class="service-gallery-thumb-wrapper">
+                                    <img
+                                        src="/src/img/Obklady/obklady_001.jpg"
+                                        class="service-gallery-thumb"
+                                        data-gallery="obklady"
+                                        data-index="0"
+                                        alt="Ukázka prací na obkladech a dlažbách"
+                                    />
+                                </div>
+
+                                <!-- skryté obrázky -->
+                                <div class="service-gallery-hidden">
+                                    <img src="/src/img/Obklady/obklady_001.jpg" data-gallery="obklady">
+                                    <img src="/src/img/Obklady/obklady_002.jpg" data-gallery="obklady">
+                                </div>
+                            </div>
+                            <div class="services-item">
+                                <h4 class="services-item-title">Sádrokartony</h4>
+                                
+                                    <ul class="services-item-text">
+                                      <li>Montáž sádrokartonových příček</li>
+                                      <li>Montáž sádrokartonových předsazených stěn</li>
+                                      <li>Montáž sádrokartonových stropních podhledů</li>
+                                      <li>Montáž kazetových podhledů</li>
+                                      <li>Lepení sádrokartonových desek na zdivo</li>
+                                      <li>a další...</li>
+                                    </ul>
+
+                                <div class="service-gallery-thumb-wrapper">
+                                    <img
+                                    src="/src/img/Sadrokartony/sadrokartony_001.jpg"
+                                    class="service-gallery-thumb"
+                                    data-gallery="sadrokartony"
+                                    data-index="0"
+                                    alt="Ukázka prací - sádrokartony"
+                                    />
+                                </div>
+
+                                <!-- skryté obrázky -->
+                                <div class="service-gallery-hidden">
+                                    <img src="/src/img/Sadrokartony/sadrokartony_001.jpg" data-gallery="sadrokartony">
+                                    
+                                </div>
+                            </div>
+                            <div class="services-item">
+                                <h4 class="services-item-title">Fasády</h4>
+                                
+                                    <ul class="services-item-text">
+                                      <li>Fasády</li>
+                                      <li>Zateplení budov</li>
+                                      <li>a další...</li>
+                                    </ul>
+                            </div>
+                    </div>
+                </div>
+                <div class="who" id="kdojsem">
+                    <h3>O mně</h3>
+                    <div class="who-content">
+                        <div class="who-image">
+                            <img src="/src/img/Dominik.jpg" alt="Dominik Hotkovič" class="who-img">
+                        </div>
+                        <div class="who-text">
+                            <p class="who-text-paragraph">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                             <div class="who-more-text"><p class="who-text-paragraph">
+                                Něco víc o tobě
+                            </p>
+                            </div>
+                            <button class="read-more-btn" aria-expanded="false" aria-controls="who-more-text-content">
+                                     Více
+                                    <span class="arrow-icon"></span> </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="price" id="cena">
+                    <h3>Cena</h3>
+                    <p class="price-text services-item">
+                        Cena se vypočítává individuálně. Odvíjí se od aktuálních cen materiálu, náročnosti vašeho požadavku a vašich možností.
+                    </p>
+                </div> -->
+                <div class="contact" id="kontakt">
+                    <h3>Kontakt</h3>
+                    <p class="contact-text highlight">
+                        Rád si s Vámi popovídám o tom, co řešíte. Stačí se mi ozvat!
+                    </p>
+                    <p class="contact-text">V poptávce specifikujte, o jaký typ prací a v jakém rozsahu máte zájem, přidejte informaci o lokalitě a telefonní kontakt. Ozvu se Vám co nejdříve.</p>
+                    <br />
+                    <br />
+                    <p class="contact-text"><span class="strong">E-mail: </span><a href="mailto:SPHotkovic@seznam.cz">SPHotkovic@seznam.cz</a></p>
+                    <p class="contact-text"><span class="strong">Telefon:</span> +420 724 318 022</p>
+                    <p class="contact-text"><span class="strong">Adresa:</span> Komenského 440, 793 05 Moravský Beroun</p>
+                    <p class="contact-text"><span class="strong">IČ: </span>08689636</p>
+                    
+                </div>
+            </div>
+    </div>
+    <footer>
+        <p class="footer-text">
+            &copy; <span id="rok-copyright"></span> Stavební práce | Dominik Hotkovič
+        </p>
+       
+    </footer>
+    
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close">×</button>
+        <button class="lightbox-prev">‹</button>
+            <img class="lightbox-image" alt="">
+        <button class="lightbox-next">›</button>
+    </div>
+
+  </body>
+</html>

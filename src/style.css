@@ -1,0 +1,438 @@
+:root {
+  --primary-color: #333329;
+  --secondary-color: #f4f5e3;
+  --heading-color: #FFF700;
+  --accent-color: #2cbe69;
+  --complementary-color: #f9f57c;
+}
+
+/* =====================
+   RESET & BASE
+===================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Host Grotesk", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  line-height: 1.6;
+  font-size: 1.2em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  margin: 1em auto;
+  padding: 0.8em 1.5em;
+  border: none;
+  background-color: var(--heading-color);
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 999px;
+}
+
+/* =====================
+   LAYOUT
+===================== */
+.page-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2em;
+}
+
+/* =====================
+   TYPOGRAPHY
+===================== */
+h1, h2, h3, h4 {
+  color: var(--heading-color);
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+h1 { font-size: 3.5em; margin: 1em 0; }
+h2 { font-size: 2.5em; }
+h3 { font-size: 2em; }
+h4 { font-size: 1.3em; color: var(--accent-color); }
+
+p { margin-bottom: 1em; }
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--heading-color);
+  
+}
+
+li {
+    list-style: none;
+}
+
+/* =====================
+   HEADER / NAVBAR
+===================== */
+header {
+  height: 100vh;
+}
+
+.navbar {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: transparent;
+  transition:
+    height 0.4s ease,
+    background-color 0.4s ease;
+}
+
+.navbar.scrolled {
+  height: 5em;
+  background-color: var(--primary-color);
+  justify-content: space-between;
+  padding: 0 1.5em;
+}
+
+/* LOGO */
+.header-image {
+  max-height: 60vh;
+  width: auto;
+  object-fit: contain;
+  transition: max-height 0.4s ease;
+}
+
+.navbar.scrolled .header-image {
+  max-height: 3.5em;
+}
+
+/* =====================
+   HAMBURGER
+===================== */
+.hamburger {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger .bar {
+  height: 4px;
+  background-color: var(--heading-color);
+  border-radius: 5px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* =====================
+   NAV MENU
+===================== */
+.nav-list {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: var(--primary-color);
+  list-style: none;
+
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6em;
+}
+
+.nav-list.active {
+  display: flex;
+}
+
+.nav-list li {
+  font-size: 2.5em;
+  margin: 1em 0;
+}
+
+.nav-item a {
+  color: var(--heading-color);
+}
+
+/* =====================
+   SECTIONS
+===================== */
+.intro, .services, .who, .contact {
+  padding: 3em 0;
+  text-align: center;
+}
+
+.intro-text {
+    margin: 2em auto;
+}
+
+.intro-buttons{
+    margin: 0.5em auto;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.intro-image {
+    margin: 5em auto;
+    border-top: 3px solid var(--heading-color);
+    border-bottom: 3px solid var(--heading-color);
+}
+
+
+.highlight {
+  color: var(--complementary-color);
+  font-weight: bold;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+
+/* =====================
+   SERVICES
+===================== */
+.services-item {
+  background-color: var(--complementary-color);
+  color: var(--primary-color);
+  padding: 1.5em;
+  border-radius: 8px;
+  margin-bottom: 1.5em;
+}
+
+.services-item-title {
+    color: var(--accent-color);
+    font-size: 1.8em;
+}
+
+/* =====================
+   GALERIE v SERVICES
+===================== */
+/* náhled */
+.service-gallery-thumb {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid var(--accent-color);
+  cursor: pointer;
+  margin-top: 1em;
+}
+
+/* skryté obrázky */
+.service-gallery-hidden {
+  display: none;
+}
+
+/* lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 16px;
+}
+
+/* ovládání */
+.lightbox-prev,
+.lightbox-next,
+.lightbox-close {
+  position: absolute;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 0.2em 0.4em;
+}
+
+.lightbox-close {
+  top: 1rem;
+  right: 1.5rem;
+}
+
+.lightbox-prev {
+  left: 1rem;
+}
+
+.lightbox-next {
+  right: 1rem;
+}
+
+/* =====================
+  LUPA v galerii
+  ==================== */
+
+  .service-gallery-thumb-wrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.service-gallery-thumb-wrapper::after {
+  content: "🔍";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 3rem;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+
+  pointer-events: none; /* ← DŮLEŽITÉ */
+}
+
+.service-gallery-thumb-wrapper:hover::after {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .service-gallery-thumb-wrapper::after {
+    opacity: 0.6;
+  }
+}
+
+
+
+
+/* =====================
+   WHO
+===================== */
+.who-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.who-image {
+    margin: 0 auto;
+}
+.who-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid var(--heading-color);
+  object-fit: cover;
+}
+
+.who-more-text {
+  display: none;
+}
+
+.who-more-text.expanded {
+  display: block;
+}
+
+.button-highlight {
+    background-color: var(--accent-color);
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+  width: 100%;
+  background-color: var(--complementary-color);
+  color: var(--primary-color);
+  padding: 1.5em;
+  text-align: center;
+}
+
+
+
+
+
+/* =====================
+   DESKTOP
+===================== */
+@media (min-width: 768px) {
+
+  body {
+    font-size: 1.1em;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  header {
+    height: auto;
+    padding-top: 6em;
+  }
+
+  .navbar {
+    height: 5em;
+    background-color: var(--primary-color);
+    justify-content: space-between;
+    padding: 0 2em;
+  }
+
+  .header-image {
+    max-height: 3.5em;
+  }
+
+  .nav-list {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    background: none;
+    padding: 0;
+  }
+
+  .nav-list li {
+    font-size: 1em;
+    margin: 0 1em;
+  }
+
+  .who-content {
+    flex-direction: row;
+    align-items: center;
+  }
+}
