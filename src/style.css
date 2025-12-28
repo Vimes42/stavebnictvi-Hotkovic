@@ -229,7 +229,7 @@ li {
    SERVICES
 ===================== */
 .services-item {
-  background-color: var(--complementary-color);
+  background-color: var(--heading-color);
   color: var(--primary-color);
   padding: 1.5em;
   border-radius: 8px;
