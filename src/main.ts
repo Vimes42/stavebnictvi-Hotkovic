@@ -30,6 +30,8 @@ menuButton?.addEventListener("click", () => {
   if (navList?.classList.contains("active")) {
     window.scroll({ top: 0, behavior: "smooth" });
   }
+
+  menuButton.classList.toggle('active');
 });
 
 navItems.forEach(item => {

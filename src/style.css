@@ -45,6 +45,17 @@ button {
   border-radius: 999px;
 }
 
+button:hover {
+  background-color: var(--complementary-color);
+}
+
+button:active {
+  background-color: var(--accent-color);
+  color: #fff;
+  transform: scale(0.96);
+}
+
+
 /* =====================
    LAYOUT
 ===================== */
@@ -66,7 +77,7 @@ h1, h2, h3, h4 {
 h1 { font-size: 2.5em; margin: 1em 0; }
 h2 { font-size: 2em; }
 h3 { font-size: 1.8em; }
-h4 { font-size: 1.3em; color: var(--accent-color); }
+h4 { font-size: 1.3em; color: var(--primary-color); }
 
 p { margin-bottom: 1em; }
 
@@ -139,6 +150,10 @@ li {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+.hamburger.active .bar {
+  background-color: var(--accent-color);
+}
+
 /* =====================
    NAV MENU
 ===================== */
@@ -167,6 +182,14 @@ li {
   color: var(--heading-color);
 }
 
+.nav-item a:active {
+  color: var(--accent-color);
+}
+
+.nav-item a.active {
+  color: var(--accent-color);
+}
+
 /* =====================
    SECTIONS
 ===================== */
@@ -182,8 +205,7 @@ li {
 .intro-buttons{
     margin: 0.5em auto;
     display: flex;
-    justify-content: space-evenly;
-
+    flex-direction: column;
 }
 
 .intro-image {
@@ -215,7 +237,6 @@ li {
 }
 
 .services-item-title {
-    color: var(--accent-color);
     font-size: 1.8em;
 }
 
@@ -368,6 +389,15 @@ li {
     background-color: var(--accent-color);
 }
 
+.button-highlight:hover {
+  background-color: var(--heading-color);
+}
+
+.button-highlight:active {
+  background-color: var(--primary-color);
+  color: var(--heading-color);
+}
+
 /* =====================
    FOOTER
 ===================== */
@@ -423,6 +453,34 @@ footer {
   .nav-list li {
     font-size: 1em;
     margin: 0 1em;
+  }
+
+  .services-item {
+    transition: 
+      background-color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .services-item:hover {
+    background-color: var(--heading-color);
+    transform: translateY(-6px);
+  }
+
+  .services-item:hover h3 {
+    color: var(--primary-color);
+  }
+
+  .service-gallery-thumb-wrapper {
+  cursor: zoom-in;
+  }
+
+  .service-gallery-thumb-wrapper::after {
+  transform: scale(0.9);
+}
+
+  .service-gallery-thumb-wrapper:hover::after {
+    opacity: 1;
+    transform: scale(1);
   }
 
   .who-content {
