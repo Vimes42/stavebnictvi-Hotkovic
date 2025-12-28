@@ -175,7 +175,7 @@ li {
 
 .nav-list li {
   font-size: 2.5em;
-  margin: 1em 0;
+  margin: 0.5em 0;
 }
 
 .nav-item a {
@@ -377,6 +377,10 @@ li {
   object-fit: cover;
 }
 
+.who-name {
+  color: var(--heading-color);
+}
+
 .who-more-text {
   display: none;
 }
@@ -403,7 +407,7 @@ li {
 ===================== */
 footer {
   width: 100%;
-  background-color: var(--complementary-color);
+  background-color: var(--heading-color);
   color: var(--primary-color);
   padding: 1.5em;
   text-align: center;
@@ -462,7 +466,7 @@ footer {
   }
 
   .services-item:hover {
-    background-color: var(--heading-color);
+    background-color: var(--complementary-color);
     transform: translateY(-6px);
   }
 
