@@ -48,20 +48,14 @@ const readMoreBtn =
 const whoMoreText =
   document.querySelector(".who-more-text") as HTMLElement | null;
 
-const isMobile = () => window.innerWidth < 768;
-
 const updateReadMore = () => {
   if (!readMoreBtn || !whoMoreText) return;
 
-  if (isMobile()) {
     readMoreBtn.style.display = "";
     whoMoreText.classList.remove("expanded");
     readMoreBtn.setAttribute("aria-expanded", "false");
     readMoreBtn.firstChild!.textContent = "Více";
-  } else {
-    whoMoreText.classList.add("expanded");
-    readMoreBtn.style.display = "none";
-  }
+  
 };
 
 readMoreBtn?.addEventListener("click", () => {
@@ -75,7 +69,7 @@ window.addEventListener("resize", updateReadMore);
 updateReadMore();
 
 // ======================
-// GALERIE (SERVICES)
+// GALERIE 
 // ======================
 
 type Gallery = Record<string, string[]>;
@@ -91,31 +85,52 @@ const btnNext = document.querySelector<HTMLButtonElement>(".lightbox-next")!;
 const btnClose = document.querySelector<HTMLButtonElement>(".lightbox-close")!;
 
 /* načtení galerií */
-document.querySelectorAll<HTMLImageElement>(".service-gallery-hidden img").forEach((img) => {
-    const gallery = img.dataset.gallery;
-    if (!gallery) return;
-
-    galleries[gallery] ??= [];
-    galleries[gallery].push(img.src);
-  });
+function initGalleries() {
+    // Najdeme všechny obrázky, které mají data-gallery
+    const allGalleryImages = document.querySelectorAll<HTMLImageElement>("[data-gallery]");
+    
+    allGalleryImages.forEach(img => {
+        const name = img.dataset.gallery!;
+        if (!galleries[name]) galleries[name] = [];
+        
+        // Přidáme URL obrázku, pokud tam ještě není
+        if (!galleries[name].includes(img.src)) {
+            galleries[name].push(img.src);
+        }
+    });
+}
 
 /* otevření */
-document.querySelectorAll(".service-gallery-thumb").forEach(thumb => {
-  thumb.addEventListener("click", () => {
-    const galleryName = thumb.getAttribute("data-gallery")!;
-    currentGallery = galleries[galleryName];
-    currentIndex = 0;
-    openLightbox();
-  });
+document.addEventListener("click", (e) => {
+    const target = e.target as HTMLImageElement;
+    if (target.classList.contains("service-gallery-thumb")) {
+        const galleryName = target.dataset.gallery;
+        if (!galleryName) return;
+
+        initGalleries(); // Pro jistotu aktualizujeme seznam
+        currentGallery = galleries[galleryName];
+        
+        // Najdeme index aktuálního obrázku v poli galerie
+        currentIndex = currentGallery.indexOf(target.src);
+        
+        if (currentIndex !== -1) {
+            openLightbox();
+        }
+    }
 });
 
 function openLightbox() {
-  lightboxImg.src = currentGallery[currentIndex];
-  lightbox.classList.add("active");
+    if (currentGallery[currentIndex]) {
+        lightboxImg.src = currentGallery[currentIndex];
+        lightbox.classList.add("active");
+        document.body.style.overflow = "hidden"; // Zamezí skrolování pozadí
+    }
 }
 
 function closeLightbox() {
+
   lightbox.classList.remove("active");
+  document.body.style.overflow = "";
 }
 
 /* navigace */
