@@ -72,6 +72,7 @@ h1, h2, h3, h4 {
   color: var(--heading-color);
   text-align: center;
   margin-bottom: 2em;
+  margin-top: 2em;
 }
 
 h1 { font-size: 2.5em; margin: 1em 0; }
