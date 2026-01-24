@@ -199,6 +199,11 @@ li {
   text-align: center;
 }
 
+.intro-img {
+  width: 100%;
+  margin-top: 5em;
+  }
+
 .intro-text {
     margin: 1em auto;
 }
@@ -217,44 +222,17 @@ li {
   align-items: center;      
   justify-content: center; 
 
-  background-image: url("/src/img/intro_image.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+  }
 
-.intro-content {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 3rem;
-  margin: 0 5%;
-  max-width: 800px;
-  color: #fff;
-  border-radius: 6px;
-}
-
-/* overlay */
-/*.intro::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.60); 
-}
-
-.intro-content {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  padding: 3rem;
-  color: #fff;
-}*/
-
-
+  .intro-content {
+  padding: 0 2em; 
+  }
 
 .highlight {
   color: var(--complementary-color);
   font-weight: bold;
-  font-size: 1.3em;
-  margin-top: 3em;
+  font-size: 2em;
+  margin-top: 1.5em;
 }
 
 .strong {
@@ -567,17 +545,45 @@ footer {
     font-size: 1em;
     margin: 0 1em;
   }
+  
+  .intro-img {
+  display: none;
+  }
 
   .intro-buttons{
     flex-direction: row;
     justify-content: space-evenly;
   }
 
+  .intro {
+    background-image: url("/src/img/intro_image.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+ 
+
+  /* overlay */
+  .intro::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.60); 
+  }
+
+  .intro-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    padding: 3rem;
+    color: #fff;
+  }
+
   .services-items-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2em;
+   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2em;
+  /*display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;*/
   }
 
   .services-item {
@@ -648,6 +654,9 @@ footer {
     gap: 2em;
   }
 
+ /* .services-items-container {
+    grid-template-columns: repeat(4, 1fr);
+  }*/
 
   .services-item {
     flex: 0 0 calc(32% - 1em);
